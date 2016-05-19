@@ -1,0 +1,9 @@
+CACHE MANIFEST
+
+# Adds the ability to play the game online.
+# The following comment needs to be updated whenever a change is made.
+# Run `rake appcache:update` to do so
+# Version: 0.1.0
+
+# Main page
+index.html
