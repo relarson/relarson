@@ -3,37 +3,12 @@
 	padding:0;
 }
 
-body {
-	background:url(../../images/background.png) top left;
-	font: .8em "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-
 h2{ 
 	margin-bottom:10px;
 }
 
-#wrapper{
-	width:720px;
-	margin:40px auto 0;
-}
-
-#wrapper h1{
-	color:#FFF;
-	text-align:center;
-	margin-bottom:20px;
-}
-
-#wrapper a{
-	display:block;
-	font-size:1.2em;
-	padding-top:20px;
-	color:#FFF;
-	text-decoration:none;
-	text-align:center;
-}
-
 #tabContainer {
-	width:700px;
+	width:100%;
 	padding:15px;
 	background-color:#2e2e2e;
 	-moz-border-radius: 4px;
