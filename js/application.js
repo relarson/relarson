@@ -5,6 +5,9 @@ window.onload=function() {
     players.push(new Player("Ross"));
 
     players.forEach(function(player) {
-        list.appendChild(player.name);
+        var item = document.createElement("li");
+        var name = document.createTextNode(player.name);
+        item.appendChild(name);
+        list.appendChild(item);
     }, this);
 }
