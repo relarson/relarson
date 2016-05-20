@@ -1,7 +1,10 @@
 .icon {
   width: 32px;
   height: 32px;
-  fill: #257AB6; /* old browsers */
-  fill: linear-gradient(#0C91EC 0%, #257AB6 100%); /* firefox */
-  fill: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0C91EC), color-stop(100%,#257AB6)); /* webkit */
+  background: #257AB6; /* old browsers */
+  background: linear-gradient(#0C91EC 0%, #257AB6 100%); /* firefox */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0C91EC), color-stop(100%,#257AB6)); /* webkit */
+  -moz-border-radius: 16px; 
+  -webkit-border-radius: 16px; 
+  border-radius: 16px;
 }
