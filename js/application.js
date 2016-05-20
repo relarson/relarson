@@ -1,6 +1,6 @@
 window.onload=function() {
     var players = [];
-    var list = document.getElementsByClassName("player-list")[0];
+    var list = document.getElementsByClassName("playerList")[0];
 
     players.push(new Player("Ross"));
 
