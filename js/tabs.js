@@ -3,7 +3,7 @@ window.onload=function() {
     // get tab container
     var container = document.getElementById("tabContainer");
     // set current tab
-    var navitem = container.querySelector(".tabs ul li");
+    var navitem = container.querySelector("#tabs ul li");
     //store which tab we are on
     var ident = navitem.id.split("_")[1];
     navitem.parentNode.setAttribute("data-current",ident);
