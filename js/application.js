@@ -16,8 +16,8 @@ window.onload=function() {
 }
 
 var addPlayer = function() {
-    if (list !== undefined) {
-        var player = new Player(document.getElementById(add-player).value);
+    if (event.keyCode === 13 && list !== undefined) {
+        var player = new Player(document.getElementById("add-player").value);
         players.push(player);
         var item = document.createElement("li");
         var name = document.createTextNode(player.name);
