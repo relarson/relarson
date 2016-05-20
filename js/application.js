@@ -1,7 +1,7 @@
 window.onload=function() {
     initTabs();
     var players = [];
-    var list = document.getElementsByClassName("playerList")[0];
+    var list = document.getElementsByClassName("player-list")[0];
 
     players.push(new Player("Ross"));
 

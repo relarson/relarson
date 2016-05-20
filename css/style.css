@@ -3,6 +3,6 @@
     height: 32px;
  }
  
- ul.player-list li {
+ ul.player-list {
      list-style-type: none;
  }
