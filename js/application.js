@@ -1,4 +1,5 @@
 window.onload=function() {
+    initTabs();
     var players = [];
     var list = document.getElementsByClassName("playerList")[0];
 
