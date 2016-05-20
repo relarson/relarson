@@ -6,8 +6,7 @@
 #button-panel {
     margin:0 2px 0 0;
 	padding:7px 10px;
-	display:block;
-	float:left;
+	display:inline-block;
 	color:#FFF;
 	-webkit-user-select: none;
 	-moz-user-select: none;
