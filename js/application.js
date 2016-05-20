@@ -17,12 +17,14 @@ window.onload=function() {
 
 var addPlayer = function() {
     if (list !== undefined) {
-        var player = new Player(document.getElementById("add-player").value);
+        var input = document.getElementById("add-player");
+        var player = new Player(input.value);
         players.push(player);
         var item = document.createElement("li");
         var name = document.createTextNode(player.name);
         item.appendChild(name);
         list.appendChild(item);
+        input.value = '';
     }
 }
 
