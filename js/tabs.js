@@ -1,4 +1,4 @@
-window.onload=function() {
+var initTabs=function() {
 
     // get tab container
     var container = document.getElementById("tabContainer");
