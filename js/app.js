@@ -2,7 +2,7 @@ window.onerror = function(error) {
     alert(error);
 };
 
-define(["js/tabs", "js/player"], function(Tabs, Player) {
+define(["./tabs", "./player"], function(Tabs, Player) {
     var players = [];
     var list = undefined;
 
@@ -27,11 +27,13 @@ define(["js/tabs", "js/player"], function(Tabs, Player) {
         e = e || window.event;
         if (e.keyCode == 13)
         {
-            document.getElementById('add-player-btn').click();
+            addPlayer();
             return false;
         }
         return true;
     }
+    
+    document.getElementById("add-player").onkeypress = searchKeyPress
     
     return {
         addPlayer: addPlayer,

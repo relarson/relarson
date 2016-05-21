@@ -37,9 +37,8 @@
           <input
               type="text"
               autocomplete="given-name"
-              id="add-player"
-              onkeypress="return searchKeyPress(event);"/>
-          <input type="button" id="add-player-btn" onclick="addPlayer();" hidden="hidden" />
+              id="add-player"/>
+          <input type="button" id="add-player-btn"hidden="hidden" />
         </div>
         <div class="tabcontent" id="tabcontent_1">
           <h2>Round 1</h2>
@@ -61,10 +60,7 @@
     </div>
   </div>
   
-  <script src="js/require.min.js"></script>
-  <script>
-    require(['js/app']);
-  </script>
+  <script data-main="js/app.js" src="js/require.min.js"></script>
 
 </body>
 </html>
