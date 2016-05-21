@@ -19,6 +19,10 @@ define(["./tabs", "./player"], function(Tabs, Player) {
             item.appendChild(name);
             list.appendChild(item);
             input.value = '';
+            
+            if (players.length >= 5) {
+                document.getElementById("add-player").readOnly = true;
+            }
         }
     }
 
