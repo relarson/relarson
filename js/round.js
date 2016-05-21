@@ -14,7 +14,5 @@ define(function() {
        this.wasabiSquid = 0;
    };
    
-   return {
-       Round: Round
-   } 
+   return Round
 });

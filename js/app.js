@@ -12,7 +12,7 @@ define(["./tabs", "./player"], function(Tabs, Player) {
     var addPlayer = function() {
         if (list !== undefined) {
             var input = document.getElementById("add-player");
-            var player = new Player.Player(input.value);
+            var player = new Player(input.value);
             players.push(player);
             var item = document.createElement("li");
             var name = document.createTextNode(player.name);
