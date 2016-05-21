@@ -2,7 +2,7 @@ window.onerror = function(error) {
     alert(error);
 };
 
-define(["./tabs", "./player"], function(Tabs, Player) {
+define(["js/tabs", "js/player"], function(Tabs, Player) {
     var players = [];
     var list = undefined;
 

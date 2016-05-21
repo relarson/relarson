@@ -1,5 +1,5 @@
 // Player class
-define(["./round"], function(Round) {
+define(["js/round"], function(Round) {
     var Player = function(name) {
         this.name = name;
         this.rounds = {
