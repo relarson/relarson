@@ -33,5 +33,10 @@ define(["./tabs", "./player"], function(Tabs, Player) {
         return true;
     }
     
+    return {
+        addPlayer: addPlayer,
+        searchKeyPress: searchKeyPress
+    }
+    
 });
 
