@@ -17,7 +17,7 @@ define(["./tabs", "./player", "./game"], function(Tabs, Player) {
             var item = document.createElement("li");
             var name = document.createTextNode(player.name);
             item.appendChild(name);
-            item.id = "player-id-" + player.id;
+            item.id = player.id;
             list.appendChild(item);
             input.value = '';
             

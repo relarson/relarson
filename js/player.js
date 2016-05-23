@@ -4,7 +4,7 @@ define(["./round"], function(Round) {
         var counter = 1;
         
         this.name = name;
-        this.id = counter;
+        this.id = 'player-id-' + counter;
         this.rounds = {
             "1": new Round(),
             "2": new Round(),

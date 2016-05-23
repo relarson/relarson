@@ -1,6 +1,7 @@
 // Round class
 define(function() {
    var Round = function() {
+       var dumplingScores = [0, 1, 3, 6, 10, 15];
        this.maki = 0;
        this.dumpling = 0;
        this.tempura = 0;
@@ -10,8 +11,20 @@ define(function() {
        this.salmon = 0;
        this.squid = 0;
        this.wasabiEgg = 0;
-       this.wasabiSalon = 0;
+       this.wasabiSalmon = 0;
        this.wasabiSquid = 0;
+   };
+   
+   Round.prototype.getStaticPoints = function() {
+       return dumplingScores[this.dumpling] +
+            ( Math.floor( this.tempura / 2 ) * 5 ) +
+            ( Math.floor(this.sashimi / 3 ) * 10 ) +
+            this.egg + 
+            ( this.salmon * 2 ) +
+            ( this.squid * 3 ) +
+            ( this.wasabiEgg * 3 ) +
+            ( this.wasabiSalmon * 6 ) +
+            ( this.wasabiSquid * 9 );
    };
    
    return Round
