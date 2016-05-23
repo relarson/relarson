@@ -21,7 +21,8 @@ define(["./tabs", "./player"], function(Tabs, Player) {
             input.value = '';
             
             if (players.length >= 5) {
-                document.getElementById("add-player").readOnly = true;
+                input.readOnly = true;
+                input.hidden = true;
             }
         }
     }
