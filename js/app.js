@@ -2,7 +2,7 @@ window.onerror = function(error) {
     alert(error);
 };
 
-define(["./tabs", "./player"], function(Tabs, Player) {
+define(["./tabs", "./player", "./game"], function(Tabs, Player) {
     var players = [];
     var list = undefined;
 
@@ -17,6 +17,7 @@ define(["./tabs", "./player"], function(Tabs, Player) {
             var item = document.createElement("li");
             var name = document.createTextNode(player.name);
             item.appendChild(name);
+            item.id = "player-id-" + player.id;
             list.appendChild(item);
             input.value = '';
             
