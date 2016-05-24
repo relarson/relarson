@@ -5,7 +5,6 @@
   <title>Sushi Go! Score Calculator</title>
 
   <link href="css/style.css" rel="stylesheet" type="text/css">
-  <link href="css/tabs.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
@@ -18,49 +17,40 @@
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 <body>
-  <div class="container">
-    <div id="tabContainer">
-      <div id="tabs">
-        <ul>
-          <li id="tab_players">Players</li>
-        </ul>
-      </div>
-      <div id="tabcontents">
-        <div class="tabcontent" id="tabcontent_players">
-          <table id="player-table">
-            <thead>
-              <tr>
-                <th> Name </th>
-                <th> Rd 1 </th>
-                <th> Rd 2 </th>
-                <th> Rd 3 </th>
-                <th> Dessert </th>
-                <th> Final </th>
-              </tr>
-            </thead>
-            <tbody id="player-table-body">
-            </tbody>
-            <tfoot>
-              <tr>
-                <td>
-                  <input 
-                    type="text"
-                    autocomplete="given-name"
-                    id="add-player"
-                    placeholder="New Player"/>
-                  <input type="button" id="add-player-btn"hidden="hidden" />
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tfoot>
-            
-          </table>
-        </div>
-      </div>
+  <div id="container">
+    <div id="contents">
+      <table id="player-table">
+        <thead>
+          <tr>
+            <th> Name </th>
+            <th> Rd 1 </th>
+            <th> Rd 2 </th>
+            <th> Rd 3 </th>
+            <th> Dessert </th>
+            <th> Final </th>
+          </tr>
+        </thead>
+        <tbody id="player-table-body">
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>
+              <input 
+                type="text"
+                autocomplete="given-name"
+                id="add-player"
+                placeholder="New Player"/>
+              <input type="button" id="add-player-btn"hidden="hidden" />
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tfoot>
+        
+      </table>
     </div>
   </div>
   

@@ -2,12 +2,11 @@ window.onerror = function(error) {
     alert(error);
 };
 
-define(["./tabs", "./player", "./game"], function(Tabs, Player, Game) {
+define(["./player", "./game"], function(Player, Game) {
     var players = [];
     var table = undefined;
     var game = new Game();
 
-    Tabs.init();
     table = document.getElementById("player-table-body");
 
     var addPlayer = function() {

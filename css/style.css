@@ -6,8 +6,10 @@
 table#player-table {
     border: 1px;
     border-style: solid;
-    border-color: black;
     border-spacing: 0px;
+    -moz-border-radius: 4px;
+	border-radius: 4px; 
+    background: #257AB6;
 }
  
 table#player-table td {
@@ -21,5 +23,23 @@ table#player-table th {
     border-width: 0px;
     padding: 3px;
     color: white;
+}
+
+#container {
+	padding:15px;
+	background-color:#2e2e2e;
+	/*-moz-border-radius: 4px;
+	border-radius: 4px; */
+}
+
+#contents {
+	-moz-border-radius: 4px;
+	border-radius: 4px; 
+	padding:10px 10px 25px;
+	background: #FFFFFF; /* old browsers */
+	background: -moz-linear-gradient(top, #FFFFFF 0%, #FFFFFF 90%, #e4e9ed 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(90%,#FFFFFF), color-stop(100%,#e4e9ed)); /* webkit */
+	margin:0;
+	color:#333;
 }
 
