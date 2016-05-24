@@ -1,8 +1,7 @@
 // Player class
 define(["./round"], function(Round) {
+    var counter = 1;
     var Player = function(name) {
-        var counter = 1;
-        
         this.name = name;
         this.id = 'player-id-' + counter;
         this.rounds = {
@@ -26,5 +25,5 @@ define(["./round"], function(Round) {
             this.rounds["3"].pudding;
     };
     
-    return Player
+    return Player;
 });

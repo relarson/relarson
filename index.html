@@ -23,38 +23,42 @@
       <div id="tabs">
         <ul>
           <li id="tab_players">Players</li>
-          <li id="tab_1">Rd 1</li>
-          <li id="tab_2">Rd 2</li>
-          <li id="tab_3">Rd 3</li>
-          <li id="tab_scores">Scores</li>
         </ul>
       </div>
       <div id="tabcontents">
         <div class="tabcontent" id="tabcontent_players">
-          <ul class="player-list">
+          <table id="player-table">
+            <thead>
+              <tr>
+                <th> Name </th>
+                <th> Rd 1 </th>
+                <th> Rd 2 </th>
+                <th> Rd 3 </th>
+                <th> Dessert </th>
+                <th> Final </th>
+              </tr>
+            </thead>
+            <tbody id="player-table-body">
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>
+                  <input 
+                    type="text"
+                    autocomplete="given-name"
+                    id="add-player"
+                    placeholder="New Player"/>
+                  <input type="button" id="add-player-btn"hidden="hidden" />
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tfoot>
             
-          </ul>
-          <input
-              type="text"
-              autocomplete="given-name"
-              id="add-player"/>
-          <input type="button" id="add-player-btn"hidden="hidden" />
-        </div>
-        <div class="tabcontent" id="tabcontent_1">
-          <h2>Round 1</h2>
-          <p>set up scores for each player</p>
-        </div>
-        <div class="tabcontent" id="tabcontent_2">
-          <h2>Round 2</h2>
-          <p>set up scores for each player</p>
-        </div>
-        <div class="tabcontent" id="tabcontent_3">
-          <h2>Round 3</h2>
-          <p>set up scores for each player</p>
-        </div>
-        <div class="tabcontent" id="tabcontent_scores">
-          <h2>Final Scores</h2>
-          <p>display scores for each player</p>
+          </table>
         </div>
       </div>
     </div>

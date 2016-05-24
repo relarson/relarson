@@ -1,49 +1,47 @@
-define(["./player", "./round"], function() {
+define(["./player", "./round"], function(Player, Round) {
    var Game = function() {
-       this.players = {};
+       this.players = [];
    };
    
    Game.prototype.addPlayer = function(player) {
-       this.players[player.id] = player;
+       this.players.push(player);
    };
    
    Game.prototype.removePlayer = function(playerId) {
-       return delete this.players[playerId];
+       this.players = this.players.filter(function(player) {
+            return player.id !== playerId;    
+       });
    };
    
    Game.prototype.getScores = function() {
        var scores = {};
-       var playerIds = Object.keys(this.players);
-       var maki = getMakiScores();
-       var pudding = getPuddingCounts();
-       playerIds.forEach(function(playerId) {
-           var player = this.players[playerId];
+       var maki = getMakiScores(this.players);
+       var pudding = getPuddingCounts(this.players);
+       this.players.forEach(function(player) {
            var round1Maki = getMakiPoints(maki["1"], player.rounds["1"].maki);         
            var round2Maki = getMakiPoints(maki["2"], player.rounds["2"].maki);
            var round3Maki = getMakiPoints(maki["3"], player.rounds["3"].maki);
-           scores[playerId] = {
+           scores[player.id] = {
                "1": player.rounds["1"].getStaticScore + round1Maki,
                "2": player.rounds["2"].getStaticScore + round2Maki,
                "3": player.rounds["3"].getStaticScore + round3Maki,
                "dessert": getPuddingPoints(pudding, player.getPuddingCount())
-           };
-          
-       }, this);  
+           }; 
+       });  
+       return scores;
    };
    
-    var getMakiScores = function() {
-       var playerIds = Object.keys(this.players);
+    var getMakiScores = function(players) {
        var maki = {
            "1": [],
            "2": [],
            "3": []
        };       
-       playerIds.forEach(function(playerId) {
-           var player = this.players[playerId];
+       players.forEach(function(player) {
            maki["1"].push(player.rounds["1"].maki);     
            maki["2"].push(player.rounds["2"].maki); 
            maki["3"].push(player.rounds["3"].maki);  
-       }, this);
+       });
        function compareNums(a, b) {
            return b - a;
        } 
@@ -53,12 +51,11 @@ define(["./player", "./round"], function() {
        return maki; 
    };
    
-   var getPuddingCounts = function() {
-       var playerIds = Object.keys(this.players);
+   var getPuddingCounts = function(players) {
        var pudding = [];       
-       playerIds.forEach(function(playerId) {
+       players.forEach(function(player) {
            pudding.push(player.getPuddingCount()); 
-       }, this);
+       });
        function compareNums(a, b) {
            return b - a;
        } 
@@ -86,7 +83,7 @@ define(["./player", "./round"], function() {
        var place = allPudding.indexOf(playerPudding);
        if (place === 0) {
            // solo or tied for first
-           var firstPlaceCount = allMaki.lastIndexOf(playerMaki) + 1; // add 1 since solo will return 0 tie with 2 will return 1 etc
+           var firstPlaceCount = allPudding.lastIndexOf(playerPudding) + 1; // add 1 since solo will return 0 tie with 2 will return 1 etc
            return Math.floor( 6 / firstPlaceCount ); // 6 points shared evenly, remainder lost
        } else {
            if (allPudding.length < 3) {

@@ -2,29 +2,45 @@ window.onerror = function(error) {
     alert(error);
 };
 
-define(["./tabs", "./player", "./game"], function(Tabs, Player) {
+define(["./tabs", "./player", "./game"], function(Tabs, Player, Game) {
     var players = [];
-    var list = undefined;
+    var table = undefined;
+    var game = new Game();
 
     Tabs.init();
-    list = document.getElementsByClassName("player-list")[0];
+    table = document.getElementById("player-table-body");
 
     var addPlayer = function() {
-        if (list !== undefined) {
+        if (table !== undefined) {
             var input = document.getElementById("add-player");
             var player = new Player(input.value);
             players.push(player);
-            var item = document.createElement("li");
-            var name = document.createTextNode(player.name);
-            item.appendChild(name);
-            item.id = player.id;
-            list.appendChild(item);
+            game.addPlayer(player);
+            var rowCount = table.rows.length;
+            var row = table.insertRow(rowCount);
+ 
+            var nameCell = row.insertCell(0);
+            nameCell.innerHTML = player.name;
+            var rd1 = row.insertCell(1);
+            rd1.innerHTML = 0;
+            var rd2 = row.insertCell(2);
+            rd2.innerHTML = 0;
+            var rd3 = row.insertCell(3);
+            rd3.innerHTML = 0;
+            var dessert = row.insertCell(4);
+            dessert.innerHTML = 0;
+            var total = row.insertCell(5);
+            total.innerHTML = 0;
+
+            row.id = player.id;
             input.value = '';
             
-            if (players.length >= 5) {
+            if (rowCount >= 4) { // rowCount doesnt include new player so max is 4, not 5
                 input.readOnly = true;
                 input.hidden = true;
             }
+            
+            updateScores();
         }
     }
 
@@ -37,6 +53,11 @@ define(["./tabs", "./player", "./game"], function(Tabs, Player) {
             return false;
         }
         return true;
+    }
+    
+    var updateScores = function() {
+        var scores = game.getScores();
+        return 0;
     }
     
     document.getElementById("add-player").onkeypress = searchKeyPress

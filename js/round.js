@@ -1,6 +1,7 @@
 // Round class
 define(function() {
    var Round = function() {
+       // more than 5 still gets 15 points
        var dumplingScores = [0, 1, 3, 6, 10, 15];
        this.maki = 0;
        this.dumpling = 0;
@@ -16,7 +17,7 @@ define(function() {
    };
    
    Round.prototype.getStaticPoints = function() {
-       return dumplingScores[this.dumpling] +
+       return dumplingScores[Math.min(this.dumpling, 5)] +
             ( Math.floor( this.tempura / 2 ) * 5 ) +
             ( Math.floor(this.sashimi / 3 ) * 10 ) +
             this.egg + 
@@ -27,5 +28,5 @@ define(function() {
             ( this.wasabiSquid * 9 );
    };
    
-   return Round
+   return Round;
 });
