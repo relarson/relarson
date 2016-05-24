@@ -1,17 +1,25 @@
 .icon {
     width: 32px;
     height: 32px;
- }
+}
  
- table#player-table {
-     border: 1px;
-     border-style: solid;
-     border-color: black;
-     border-spacing: 0px;
- }
+table#player-table {
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    border-spacing: 0px;
+}
  
- table#player-table td {
-     background: #bbbbbb;
-     border-width: 0px;
- }
+table#player-table td {
+    background: #bbbbbb;
+    border-width: 0px;
+    padding: 3px;
+}
+ 
+table#player-table th {
+    background: #257AB6;
+    border-width: 0px;
+    padding: 3px;
+    color: white;
+}
 
